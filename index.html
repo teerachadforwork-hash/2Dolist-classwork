@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="2Dolist — A sleek, modern to-do list app to organize your tasks effortlessly." />
+  <title>2Dolist — Get Things Done</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-wrapper">
+    <!-- Decorative background orbs -->
+    <div class="bg-orb bg-orb--1"></div>
+    <div class="bg-orb bg-orb--2"></div>
+    <div class="bg-orb bg-orb--3"></div>
+
+    <main class="card" id="app">
+      <!-- Header -->
+      <header class="card__header">
+        <h1 class="card__title">
+          <span class="card__title-icon">✦</span>
+          2Dolist
+        </h1>
+        <p class="card__subtitle" id="taskSummary">What needs to be done?</p>
+      </header>
+
+      <!-- Add Task Form -->
+      <form class="add-form" id="addForm" autocomplete="off">
+        <input
+          type="text"
+          class="add-form__input"
+          id="taskInput"
+          placeholder="Add a new task…"
+          aria-label="New task text"
+          maxlength="120"
+        />
+        <button type="submit" class="add-form__btn" id="addBtn" aria-label="Add task">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+            <path d="M10 4v12M4 10h12" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </form>
+
+      <!-- Filter Bar -->
+      <nav class="filters" id="filters" aria-label="Task filters">
+        <button class="filters__btn filters__btn--active" data-filter="all">All</button>
+        <button class="filters__btn" data-filter="active">Active</button>
+        <button class="filters__btn" data-filter="completed">Completed</button>
+      </nav>
+
+      <!-- Task List -->
+      <ul class="task-list" id="taskList" aria-label="Tasks"></ul>
+
+      <!-- Empty State -->
+      <div class="empty-state" id="emptyState">
+        <span class="empty-state__icon">📋</span>
+        <p class="empty-state__text">No tasks yet — add one above!</p>
+      </div>
+
+      <!-- Footer -->
+      <footer class="card__footer" id="footer">
+        <span class="card__footer-count" id="activeCount">0 tasks left</span>
+        <button class="card__footer-clear" id="clearCompleted">Clear completed</button>
+      </footer>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
